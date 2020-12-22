@@ -1,4 +1,4 @@
-package hello.entity;
+package blog.entity;
 
 public class Result {
     String status;

@@ -1,8 +1,8 @@
-package hello.controller;
+package blog.controller;
 
-import hello.entity.Result;
-import hello.entity.User;
-import hello.service.UserService;
+import blog.entity.Result;
+import blog.entity.User;
+import blog.service.UserService;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;

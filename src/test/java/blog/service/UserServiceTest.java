@@ -1,7 +1,8 @@
-package hello.service;
+package blog.service;
 
-import hello.entity.User;
-import hello.mapper.UserMapper;
+
+import blog.entity.User;
+import blog.mapper.UserMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

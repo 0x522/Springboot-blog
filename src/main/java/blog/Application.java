@@ -1,4 +1,4 @@
-package hello;
+package blog;
 
 import java.util.Arrays;
 

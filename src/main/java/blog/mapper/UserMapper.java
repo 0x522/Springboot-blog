@@ -1,6 +1,6 @@
-package hello.mapper;
+package blog.mapper;
 
-import hello.entity.User;
+import blog.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

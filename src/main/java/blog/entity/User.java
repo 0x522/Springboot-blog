@@ -1,4 +1,4 @@
-package hello.entity;
+package blog.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

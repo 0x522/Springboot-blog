@@ -1,7 +1,7 @@
-package hello.controller;
+package blog.controller;
 
+import blog.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hello.service.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,12 +16,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.servlet.http.HttpSession;
 import java.nio.charset.Charset;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -82,7 +80,7 @@ class AuthControllerTest {
         //Mock entity User
         when(userService.getUserByUsername("myUser"))
                 .thenReturn(
-                        new hello.entity.User(123, "myUser", bCryptPasswordEncoder.encode("myPassword")));
+                        new blog.entity.User(123, "myUser", bCryptPasswordEncoder.encode("myPassword")));
 
         MvcResult response =
                 mvc.perform(post("/auth/login")

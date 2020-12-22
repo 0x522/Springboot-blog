@@ -1,4 +1,4 @@
-package hello;
+package blog;
 
 import org.junit.jupiter.api.Test;
 
