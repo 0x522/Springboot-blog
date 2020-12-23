@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
@@ -140,7 +140,7 @@
                                 <argument>-e</argument>
                                 <argument>MYSQL_DATABASE=xdml</argument>
                                 <argument>-p</argument>
-                                <argument>3305:3306</argument>
+                                <argument>3307:3306</argument>
                                 <argument>-d</argument>
                                 <argument>mysql:5.7.27</argument>
                             </arguments>
@@ -170,7 +170,7 @@
                         <configuration>
                             <executable>sleep</executable>
                             <arguments>
-                                <argument>100</argument>
+                                <argument>120</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -182,7 +182,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3306/xdml?userSSL=false</url>
+                    <url>jdbc:mysql://localhost:3306/xdml</url>
                     <user>root</user>
                     <password>123</password>
                 </configuration>
@@ -194,7 +194,7 @@
                             <goal>migrate</goal>
                         </goals>
                         <configuration>
-                            <url>jdbc:mysql://localhost:3305/xdml?useSSL=false</url>
+                            <url>jdbc:mysql://localhost:3307/xdml</url>
                             <user>root</user>
                             <password>123</password>
                         </configuration>
