@@ -1,4 +1,4 @@
-package blog.mapper;
+package blog.dao;
 
 import blog.entity.User;
 import org.apache.ibatis.annotations.Insert;

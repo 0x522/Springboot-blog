@@ -2,7 +2,7 @@ package blog.service;
 
 
 import blog.entity.User;
-import blog.mapper.UserMapper;
+import blog.dao.UserMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

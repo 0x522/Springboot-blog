@@ -1,36 +1,47 @@
 package blog.entity;
 
-public class Result {
-    String status;
+public abstract class Result<T> {//只能使用abstract的子类
+
+    public enum ResultStatus {
+        OK("ok"),
+        FAIL("fail");
+
+        private String status;
+
+        ResultStatus(String status) {
+            this.status = status;
+        }
+    }
+
+    ResultStatus status;
     String msg;
-    boolean isLogin;
-    Object data;
+    T data;
+
 
     //静态工场模式的特点就是工厂方法返回一个实例，构造器定义为private
-    public static Result failure(String message) {
-        return new Result("fail", message, false);
+//    public static Result failure(String message) {
+//        return new Result("fail", message, false);
+//    }
+//
+//    public static Result success(String message) {
+//        return new Result("ok", message, true);
+//    }
+
+    protected Result(ResultStatus status, String msg) {
+        this(status, msg, null);
     }
 
-    public static Result success(String message) {
-        return new Result("ok", message, true);
-    }
-
-    public Result(String status, String msg, boolean isLogin) {
-        this(status, msg, isLogin, null);
-    }
-
-    public Result(String status, String msg, boolean isLogin, Object data) {
+    protected Result(ResultStatus status, String msg, T data) {
         this.status = status;
         this.msg = msg;
-        this.isLogin = isLogin;
         this.data = data;
     }
 
-    public String getStatus() {
+    public ResultStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ResultStatus status) {
         this.status = status;
     }
 
@@ -42,19 +53,11 @@ public class Result {
         this.msg = msg;
     }
 
-    public boolean isLogin() {
-        return isLogin;
-    }
-
-    public void setLogin(boolean login) {
-        isLogin = login;
-    }
-
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 }

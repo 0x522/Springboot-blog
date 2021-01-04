@@ -2,7 +2,7 @@ package blog.service;
 
 
 import blog.entity.User;
-import blog.mapper.UserMapper;
+import blog.dao.UserMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
