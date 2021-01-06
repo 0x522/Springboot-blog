@@ -7,7 +7,7 @@ import blog.entity.User;
 import blog.service.AuthService;
 import blog.service.BlogService;
 import blog.utils.AssertUtils;
-import com.mysql.cj.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -103,9 +103,9 @@ public class BlogController {
          * content : 博客内容, 博客内容不能为空，且不超过10000个字符
          * description: 博客内容简要描述,可为空，如果为空则后台自动从content中提取
          */
-        AssertUtils.assertTrue(!StringUtils.isNullOrEmpty(title) && title.length() < 100, "title is valid!");
-        AssertUtils.assertTrue(!StringUtils.isNullOrEmpty(content) && content.length() < 10000, "content is valid!");
-        if (StringUtils.isNullOrEmpty(description)) {
+        AssertUtils.assertTrue(StringUtils.isNotBlank(title) && title.length() < 100, "title is invalid!");
+        AssertUtils.assertTrue(StringUtils.isNotBlank(content)&& content.length() < 10000, "content is invalid!");
+        if (StringUtils.isBlank(description)) {
             description = content.substring(0, Math.min(content.length(), 10)) + "...";
         }
 

@@ -53,6 +53,6 @@ public class BlogControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(mvcResult -> Assertions
                         .assertTrue(mvcResult.getResponse().getContentAsString(Charset.forName("utf-8"))
-                                .contains("title is valid!")));
+                                .contains("title is invalid!")));
     }
 }
