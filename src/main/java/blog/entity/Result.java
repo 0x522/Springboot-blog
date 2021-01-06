@@ -11,6 +11,14 @@ public abstract class Result<T> {//只能使用abstract的子类
         ResultStatus(String status) {
             this.status = status;
         }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
     }
 
     ResultStatus status;
@@ -27,18 +35,14 @@ public abstract class Result<T> {//只能使用abstract的子类
 //        return new Result("ok", message, true);
 //    }
 
-    protected Result(ResultStatus status, String msg) {
-        this(status, msg, null);
-    }
-
     protected Result(ResultStatus status, String msg, T data) {
         this.status = status;
         this.msg = msg;
         this.data = data;
     }
 
-    public ResultStatus getStatus() {
-        return status;
+    public String getStatus() {
+        return status.status;
     }
 
     public void setStatus(ResultStatus status) {
