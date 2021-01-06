@@ -7,15 +7,15 @@ public class BlogListResult extends Result<List<Blog>> {
     private int page;
     private int totalPage;
 
-    public static BlogListResult success(List<Blog> data, int total, int page, int totalPage) {
-        return new BlogListResult(ResultStatus.OK, "获取成功", data, total, page, totalPage);
-    }
-
     private BlogListResult(ResultStatus status, String msg, List<Blog> data, int total, int page, int totalPage) {
         super(status, msg, data);
         this.page = page;
         this.total = total;
         this.totalPage = totalPage;
+    }
+
+    public static BlogListResult success(List<Blog> data, int total, int page, int totalPage) {
+        return new BlogListResult(ResultStatus.OK, "获取成功", data, total, page, totalPage);
     }
 
     public static BlogListResult failure(String msg) {
