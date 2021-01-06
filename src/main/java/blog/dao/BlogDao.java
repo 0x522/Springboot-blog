@@ -1,8 +1,6 @@
 package blog.dao;
 
 import blog.entity.Blog;
-import blog.entity.BlogListResult;
-import blog.entity.BlogResult;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 

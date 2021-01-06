@@ -33,7 +33,7 @@ public class BlogServiceTest {
         when(blogDao.getBlogs(anyInt(), anyInt(), any())).thenThrow(new RuntimeException());
         Result result = blogService.getBlogs(1, 10, null);
 
-        Assertions.assertEquals("fail", result.getStatus());
+        Assertions.assertEquals(Result.ResultStatus.FAIL, result.getStatus());
         Assertions.assertEquals("系统异常", result.getMsg());
     }
 }
